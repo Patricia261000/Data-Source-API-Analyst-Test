@@ -4,8 +4,6 @@
 <p align="center">
   <img src="API-Testing-Featured-Image.png" alt="Data-Source-API-Analyst-Test" width="640" height="360">
 </p>
-
-
  
 ---
 This repository contains the completed technical test for the **Data Source API Analyst** role.  
@@ -50,8 +48,11 @@ The goal of this assignment is to assess:
 - `commit_sha`, `commit_message`, `commit_author`
 
 You can download these from the Colab session or from the repository directly.
+<p align="center">
+  <img src="Screenshot_stars.png" alt="Stars Screenshot" width="400"/>
+  <img src="Screenshot_token.png" alt="Token Screenshot" width="400"/>
+</p>
 
-![Data-Source-API-Analyst-Test](Screenshot.png)
 ---
 ## 🚨 Troubleshooting Summary
 
