@@ -1,0 +1,133 @@
+commit_sha,commit_message,commit_author
+b876c67,BUG: Fix Index.equals between object and string (#61541),SALCAN
+e635c3e,"TST[string]: update expecteds for using_string_dtype to fix xfails (#61727)
+
+* TST: update expecteds for using_string_dtype to fix xfails
+
+* Update to_dict_of_blocks test to hardcode object dtype
+
+* Comment
+
+* Split test, update expected, targeted xfails
+
+* Update json test
+
+* revert commented-out",jbrockmendel
+f94b430,CI: Remove PyPy references in CI testing (#61814),Matthew Roeschke
+d5f97ed,"feature #49580: support new-style float_format string in to_csv (#61650)
+
+* feature #49580: support new-style float_format string in to_csv
+
+feat(to_csv): support new-style float_format strings using str.format
+
+Detect and process new-style format strings (e.g., ""{:,.2f}"") in the
+float_format parameter of to_csv.
+
+- Check if float_format is a string and matches new-style pattern
+- Convert it to a callable (e.g., lambda x: float_format.format(x))
+- Ensure compatibility with NaN values and mixed data types
+- Improves formatting output for floats when exporting to CSV
+
+Example:
+df = pd.DataFrame([1234.56789, 9876.54321])
+df.to_csv(float_format=""{:,.2f}"")  # now outputs formatted values like
+1,234.57
+
+Co-authored-by: Pedro Santos <pedro.filipe.santos@tecnico.ulisboa.pt>
+
+* update benchmark test
+
+* fixed pre commit
+
+* fixed offsets.pyx
+
+* fixed tests to windows
+
+* Update pandas/io/formats/format.py
+
+Co-authored-by: Matthew Roeschke <10647082+mroeschke@users.noreply.github.com>
+
+* Update pandas/io/formats/format.py
+
+Co-authored-by: Matthew Roeschke <10647082+mroeschke@users.noreply.github.com>
+
+* Update pandas/io/formats/format.py
+
+Co-authored-by: Matthew Roeschke <10647082+mroeschke@users.noreply.github.com>
+
+* updated v3.0.0.rst and fixed tm.assert_produces_warning
+
+* fixed test_new_style_with_mixed_types_in_column added match to assert_produces_warning
+
+* Update doc/source/whatsnew/v3.0.0.rst (removed reference to this PR)
+
+Co-authored-by: Simon Hawkins <simonjayhawkins@gmail.com>
+
+* fixed pre-commit
+
+* removed tm.assert_produces_warning
+
+* fixed space
+
+* fixed pre-commit
+
+---------
+
+Co-authored-by: Pedro Santos <pedro.filipe.santos@tecnico.ulisboa.pt>
+Co-authored-by: Matthew Roeschke <10647082+mroeschke@users.noreply.github.com>
+Co-authored-by: Simon Hawkins <simonjayhawkins@gmail.com>",Pedro Diogo
+d1a245c,"DEPS: Bump NumPy and tzdata (#61806)
+
+* Bump numpy
+
+* Bump numpy
+
+* Bump tzdata
+
+* ignore pytables usage, update xfail condition",Matthew Roeschke
+7c2796d,"[pre-commit.ci] pre-commit autoupdate (#61802)
+
+* [pre-commit.ci] pre-commit autoupdate
+
+updates:
+- [github.com/astral-sh/ruff-pre-commit: v0.11.12 → v0.12.2](https://github.com/astral-sh/ruff-pre-commit/compare/v0.11.12...v0.12.2)
+- [github.com/MarcoGorelli/cython-lint: v0.16.6 → v0.16.7](https://github.com/MarcoGorelli/cython-lint/compare/v0.16.6...v0.16.7)
+- [github.com/pre-commit/mirrors-clang-format: v20.1.5 → v20.1.7](https://github.com/pre-commit/mirrors-clang-format/compare/v20.1.5...v20.1.7)
+- [github.com/trim21/pre-commit-mirror-meson: v1.8.1 → v1.8.2](https://github.com/trim21/pre-commit-mirror-meson/compare/v1.8.1...v1.8.2)
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* Rename method
+
+* ignore PLW0177
+
+* Noqa test
+
+---------
+
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+Co-authored-by: Matthew Roeschke <10647082+mroeschke@users.noreply.github.com>",pre-commit-ci[bot]
+fea4f5b,"REF: remove unreachable, stronger typing in parsers.pyx (#61785)
+
+* REF: remove unreachable, stronger typing in parsers.pyx
+
+* mypy fixup",jbrockmendel
+b5e441e,"BUG: Decimal(NaN) incorrectly allowed in ArrowEA constructor with tim… (#61773)
+
+* BUG: Decimal(NaN) incorrectly allowed in ArrowEA constructor with timestamp type
+
+* GH ref
+
+* BUG: ArrowEA constructor with timestamp type
+
+* mypy fixup
+
+* mypy fixup",jbrockmendel
+16fd208,TST: option_context bug on Mac GH#58055 (#61779),jbrockmendel
+d21ad1a,"PERF: avoid object-dtype path in ArrowEA._explode (#61786)
+
+* PERF: avoid object-dtype path in ArrowEA._explode
+
+* typo fixup",jbrockmendel
